@@ -191,7 +191,7 @@ Both `let` and `const` were introduced in the ES6 (2015+) ECMA Standards with sp
 
 Since we are attempting to access `a` and `b` before they are initialized, the JavaScript Engine throws a `ReferenceError` for both variables, as they are not accessible during the dead zone period. This restricts the access to them before their declaration and initialization.
 
-Hence, the result is two `ReferenceError` exceptions
+Hence, the result is two `ReferenceError` exceptions.
 
 ---
 
