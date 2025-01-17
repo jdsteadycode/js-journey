@@ -107,3 +107,66 @@ console.log(b);
 let a = 5;
 const b = 10;
 
+// Question 6: const with Arrays and Objects
+const arr = [1, 2, 3];
+arr.push(4);
+arr = [5, 6, 7];
+
+console.log(arr);
+
+// Question 7: Variable Scoping
+var a = 10;
+
+function test() {
+  var a = 20;
+  console.log(a);
+}
+
+test();
+console.log(a);
+
+// Question 8: Scope Chain and Lexical Environment
+var a = 10;
+
+function outer() {
+  var a = 20;
+  
+  function inner() {
+    console.log(a);
+  }
+  
+  inner();
+}
+
+outer();
+
+// Question 9: Function Scope & Closures
+function outer() {
+    var a = 10;
+  
+    function inner() {
+      var b = 20;
+      console.log(a + b);
+    }
+  
+    return inner;
+  }
+  
+  var func = outer();
+  func();
+
+// Question 10: Closures and the Lexical Environment
+function outer() {
+    var a = 1;
+    function inner() {
+      console.log(a);
+    }
+    return inner;
+  }
+  
+  var func1 = outer();
+  var func2 = outer();
+  
+  func1();
+  func2();
+  
