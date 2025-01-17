@@ -27,7 +27,7 @@ function test() {
     DAY-2: More about Hoisting. 
 */
 
-// Questin 1
+// Question 1
 let x = 5;
 
 function test() {
@@ -70,3 +70,40 @@ function test() {
 }
 
 test();
+
+/* DAY4: IN-DEPTH ABOUT VARIABLES 'n' STUFF */
+// Question 2: Hoisting
+console.log(a);  
+var a = 10;  
+console.log(b);  
+let b = 20;  
+
+// Question 3: Scope and Re-declaration
+var x = 5;  
+let y = 10;  
+
+{  
+  var x = 15;  
+  let y = 20;  
+  console.log(x);  
+  console.log(y);  
+}  
+
+console.log(x);  
+console.log(y);  
+
+// Question 4: Const and Mutability
+const obj = { name: "Alice", age: 25 };
+obj.age = 30;
+obj = { name: "Bob", age: 40 };
+
+console.log(obj);
+
+
+// Question 5: Hoisting with let and const
+console.log(a);
+console.log(b);
+
+let a = 5;
+const b = 10;
+
