@@ -46,7 +46,7 @@ Since `a` is hoisted inside the function, it is initialized with `undefined` bef
 
 ---
 
-## Day 5: In-depth on Variables Scopes and Hoisting
+## Day 4: In-depth on Variables Scopes and Hoisting
 
 ### Question 1:
 
