@@ -184,7 +184,7 @@ const b = 10;
 ```
 
 **Answer:**  
-`ReferenceError, ReferenceError`
+`ReferenceError, ReferenceError.`
 
 **Justification:**
 Both `let` and `const` were introduced in the ES6 (2015+) ECMA Standards with specific restrictions, including hoisting and block-scoping. Due to hoisting, the declarations of `a` and `b` are moved to the top of their respective blocks. However, these variables remain in the **temporal dead zone** from the start of the block until their actual initialization.
@@ -192,6 +192,136 @@ Both `let` and `const` were introduced in the ES6 (2015+) ECMA Standards with sp
 Since we are attempting to access `a` and `b` before they are initialized, the JavaScript Engine throws a `ReferenceError` for both variables, as they are not accessible during the dead zone period. This restricts the access to them before their declaration and initialization.
 
 Hence, the result is two `ReferenceError` exceptions.
+
+### Question 6:
+
+**Question:** What will the following code output?
+
+```javascript
+const arr = [1, 2, 3];
+arr.push(4);
+arr = [5, 6, 7];
+
+console.log(arr);
+```
+
+**Answer:**  
+`TypeError: Assignment to a constant variable.`
+
+**Justification:**
+The `const` keyword is used to declare a constant, and in this case, it is used to set the variable as an array. On the second line, using `push()` to add a value to the array at the 3rd index is perfectly fine because we are modifying the contents of the array, not reassigning the entire array.
+
+However, the issue arises when we try to reassign the entire array to a new one with `[5, 6, 7]`. Since `const` makes the reference to the array immutable, we cannot assign a new array to the `const` variable. This results in a `TypeError` because `const` variables cannot be reassigned after their initial assignment.
+
+It's important to note that while `const` prevents reassignment, we can still manipulate the contents of the array (e.g., using `push`, `pop`, `sort`, etc.).
+
+### Question 7:
+
+**Question:** What will the following code output?
+
+```javascript
+var a = 10;
+
+function test() {
+  var a = 20;
+  console.log(a);
+}
+
+test();
+console.log(a);
+```
+
+**Answer:**  
+`20 10.`
+
+**Justification:**
+The `var` keyword is function-scoped, meaning it is not block-scoped like `let` or `const`. When the function `test()` is invoked, the value of `a` becomes `20` because `var` does not create a new copy of `a` inside the function (it uses the same `a` defined outside the function). Therefore, inside the function, `a` is `20`.
+
+After the function call, when we invoke `console.log(a);` outside the function, it prints the original value of `a`, which is `10`. This happens because `a` is not re-declared inside the function scope; it retains its value from the outer scope.
+
+Thus, the output is `20 10`.
+
+### Question 8:
+
+**Question:** What will the following code output?
+
+```javascript
+var a = 10;
+
+function outer() {
+  var a = 20;
+
+  function inner() {
+    console.log(a);
+  }
+
+  inner();
+}
+
+outer();
+```
+
+**Answer:**  
+`20.`
+
+**Justification:**
+The global `a` starts with a value of `10`. Inside the `outer()` function, `var a = 20;` declares a local `a`, shadowing the global variable. The `inner()` function, called inside `outer()`, logs the value of `a` from the closest scope, which is `20` from `outer()`. The global `a` remains unchanged at `10`, but the value logged inside `inner()` is `20` due to lexical scoping.
+
+### Question 9:
+
+**Question:** What will the following code output?
+
+```javascript
+function outer() {
+  var a = 10;
+
+  function inner() {
+    var b = 20;
+    console.log(a + b);
+  }
+
+  return inner;
+}
+
+var func = outer();
+func();
+```
+
+**Answer:**  
+`30.`
+
+**Justification:**
+Inside the `outer()` function, `var a = 10;` declares a local variable `a` each time `outer()` is invoked, and it gets a value of `10`. Similarly, inside `inner()`, `var b = 20;` declares a local `b` with a value of `20`. The sum of `a` and `b` is `30`, which is logged inside `inner()`.
+
+After `inner()` returns the value `30`, the returned value is logged by invoking the `outer()` function via `func()`. Therefore, the final output is `30`.
+
+### Question 10:
+
+**Question:** What will the following code output?
+
+```javascript
+function outer() {
+  var a = 1;
+  function inner() {
+    console.log(a);
+  }
+  return inner;
+}
+
+var func1 = outer();
+var func2 = outer();
+
+func1();
+func2();
+```
+
+**Answer:**  
+`1 1.`
+
+**Justification:**
+Inside the `outer()` function, `a` is declared using `var`, making it function-scoped. Each time `outer()` is invoked, a new copy of `a` is created with the value `10`. Inside the `inner()` function, `a` is logged, so it returns `10` but still remains within the `outer()` function's scope.
+
+Next, two named functions, `func1` and `func2`, both reference the `outer()` function. Invoking both functions simultaneously results in `1 1`, as each function call produces the same output.
 
 ---
 
