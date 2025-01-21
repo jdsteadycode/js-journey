@@ -325,6 +325,129 @@ Next, two named functions, `func1` and `func2`, both reference the `outer()` fun
 
 ---
 
+## Day 5: String - Methods and Properties 🔍
+
+## Level 01: Warm-up [Basics]
+
+### 1. Accessing Characters
+
+Given the string `const word = "JavaScript";`, write code to:
+
+- Get the first character.
+  **Answer:** `J`
+- Get the last character using a dynamic approach.
+  **Answer:** `t`
+- Get the third character.
+  **Answer:** `v`
+
+### 2. String Length
+
+For `const netflixSerie = "Stranger Things Part:IV";`, find:
+
+- The total number of characters.
+  **Answer:** `26`
+- The difference between the length of `netflixSerie` and the string "Stranger Things I".
+  **Answer:** `9`
+
+---
+
+## Level 02: Methods Without Arguments
+
+### 3. Case Conversion
+
+- Convert the string `"smile II"` into uppercase.
+  **Answer:** `"SMILE II"`
+- Convert the string `"Lionel Messi"` into lowercase.
+  **Answer:** `"lionel messi"`
+
+### 4. Trim Methods
+
+Given the string `"        Sharp Corporates Ltd.       ":`
+
+- Apply `trim()`.
+  **Answer:** `"Sharp Corporates Ltd."`
+- Apply `trimStart()`.
+  **Answer:** `"Sharp Corporates Ltd.       "`
+- Apply `trimEnd()`.
+  **Answer:** `"        Sharp Corporates Ltd."`
+
+**Explanation:**
+
+- `trim()` removes spaces from both ends.
+- `trimStart()` removes spaces from the beginning.
+- `trimEnd()` removes spaces from the end.
+
+---
+
+## Level 03: Methods With Arguments
+
+### 5. Includes & IndexOf
+
+For `const sentence = "Cristiano Ronaldo And Marco Van Basten are some of the dealiest Center Forwards of all time!":`
+
+- Check if the word "Van" exists in the sentence.
+  **Answer:** `sentence.includes("Van")` returns `true`
+- Find the index of the word "Marco".
+  **Answer:** `sentence.indexOf("Marco")` returns `20`
+- What happens when you search for the word "basten"?
+  **Answer:** `sentence.includes("basten")` returns `false` because "basten" is case-sensitive and must be written as "Basten".
+
+### 6. Replace Methods
+
+- Replace all occurrences of `"o"` with `"u"` in the string `"Good Morning!"`.
+  **Answer:** `"Guud Murning!"`
+- Replace the first occurrence of `"o"` with `"@"`.
+  **Answer:** `"G@od Morning!"`
+
+### 7. Concat
+
+Merge `"Frontend"` and `"Development"` with a hyphen (`-`) in between using `concat()`.
+**Answer:** `"Frontend-Development"`
+
+---
+
+## Level 04: Advanced Challenges
+
+### 8. Padding for Formatting and Security
+
+- Mask the first 12 characters of the credit card number `"1234567890123456"` using `padStart()`.
+  **Answer:** `"************3456"`
+- Format the number `123` as a 5-digit number by adding leading zeros (`000123`).
+  **Answer:** `"00123"`
+
+### 9. Character Codes
+
+- For `const char = "A";`, find the ASCII code using `charCodeAt()`.
+  **Answer:** `65`
+- Write a function that takes a string and returns the sum of ASCII codes for all characters.
+  ```javascript
+  fetchSumOfASCII(args){
+       // go to `script.js` file to view code and test
+  }
+  ```
+
+### 10. Split
+
+- Split `"apple,banana,grape"` into an array of fruits.
+  **Answer:** `"apple,banana,grape".split(",")` gives `["apple", "banana", "grape"]`
+- Split `"New Delhi!"` into individual characters.
+  **Answer:** `["N", "e", "w", " ", "D", "e", "l", "h", "i", "!"]`
+
+### 11. Substring vs Slice
+
+For the string `"JavaScript":`
+
+- Extract `"Java"` using `substring()`.
+  **Answer:** `"Java"`
+- Extract `"Script"` using `slice()`.
+  **Answer:** `"Script"`
+- Compare the outputs, look for them in my script.js.
+  **Comparision:**
+  - `substring()` does not accept negative indices and treats them as `0`.
+  - `slice()` accepts negative indices to count from the end.
+
+---
+
 ## Notes:
 
 - **Hoisting:** The process of moving variable declarations to the top of their respective scopes (either function or block scope).
