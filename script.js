@@ -541,3 +541,68 @@ console.log(Math.pow(2, 3));
 // 1️⃣2️⃣ How does JavaScript evaluate the following: if (null) { console.log("Truthy"); } else { console.log("Falsy"); }?
 // As if condition wouldn't satisy "null" as true this is because `null` is by-default Falsy Value ❎.
 // It would trigger the else block hence, `Falsy` ✅.
+
+
+/*
+  DAY 8: Comparison Operators in JavaScript 🚀
+*/
+
+// 1️⃣3️⃣ What is the difference between == and === in JavaScript?
+/*
+ ANS.
+  `==` operator - simple equality check operator. It cross checks the value of the given expressions.
+  It converts type implicitly to match the expressions, this is initiated behind-the-scenes by JS Engine
+  Thus output can be in-appropriate.
+
+  `===` operator - strict equality check operator. It cross checks the value as well as type of given expressions.
+  It doesn't implicitly converts type of the expression. Thus, output seems reliable here.
+
+  NOTE: `===` is recommended over `==` operator due to accurate and reliable output!
+*/
+
+// 1️⃣4️⃣ What will 5 == "5" return and why?
+// ANS: true.
+/*
+  Because of `==` operator (simple equality check).
+  As `==` operator just checks the value of expressions given & An JS Engine coverts "5" -> 5 implicitly behind the scenes.
+  Thus output is `true`, which is inappropriate logically.
+
+  NOTE: To use `===` operator as mentioned above in question 13.
+*/
+
+// 1️⃣5️⃣ What is the output of true == 1?
+// ANS. true.
+/*
+  This because expressions where in first one `true` is a Truthy Value ✅ And, `1` is also Truthy Value ✅.
+  Thus `==` operator check if both values match or not! With an implicit type conversion intiated by JS Engine behind-the-scenes.
+  Thus, as both are Truthy it returns Boolean `true`.
+*/
+
+
+// 1️⃣6️⃣ What happens when you compare null >= 0 in JavaScript?
+// ANS. true
+/*
+  `>=` greater than and equal to operator checks if given expression is larger than the other and also additionally checks if it's equal or not!
+  And, JS Engine implicitly converts value of `null` to 0.
+  Thus 0 >= 0 results to Boolean true.
+
+  NOTE: comparison operators work slight differently than logical operators so here value gets converted to different one to be compared!
+*/
+
+
+// 1️⃣7️⃣ What will NaN === NaN return?
+// ANS. false
+/*
+  Because, NaN is Falsy Value ❎ that isn't equal to itself.
+  So it returns Boolean false.
+*/
+
+// 1️⃣8️⃣ What is the result of "5" > 3 in JavaScript, and why?
+// ANS. true.
+/*
+  `>` - greater than operator. 
+  It checks if given expression is larger than the other or not! 
+  Also JS Engine does implicit type coversion for the expression if needed!
+  As "5" -> 5 so, 5 > 3 which is true.
+  Thus it returns Boolean true. 
+*/
