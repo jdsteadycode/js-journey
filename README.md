@@ -455,3 +455,165 @@ For the string `"JavaScript":`
 - **Temporal Dead Zone (TDZ):** Refers to the time between entering the scope and the initialization of a variable declared with `let` or `const`, where accessing it results in an error.
 
 ---
+
+## Day 6: Math Object 🔢
+
+### Question 1:
+
+**Question:** What will `Math.floor(4.9)` return?
+
+**Answer:**  
+`4`
+
+**Justification:**  
+`Math.floor(param)` rounds down the value to the closest integer.
+
+### Question 2:
+
+**Question:** How do you generate a random number between `1` and `10` using the Math object?
+
+**Answer:**
+
+```javascript
+function getRandom(min, max) {
+  // 1 - 10
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+
+  // WORK:
+  // input (1, 10)
+  // (10 - 1 + 1)  =>  10
+  // Math.floor(Math.random() * 10) -> i.e., it will return 0 - 9 but not 10! (due to floor() -> rounds down to nearest integer i.e., ex: 0.888 -> 0, 1.9888 -> 1)
+  //  + 1 i.e., now it will return 1 -> 10
+}
+```
+
+**Justification:**  
+`getRandom(min, max)` user-defined function that returns values between minimum and maximum But, both inclusive.
+
+### Question 3:
+
+**Question:** What does `Math.abs(-7)` return, and why?
+
+**Answer:**  
+`7`
+
+**Justification:**  
+`Math.abs(param)` returns positive value of any integer which negative, Because it just removes negativity.
+
+### Question 4:
+
+**Question:** How can you round 5.4 to it's nearest integer using the Math object?
+
+**Answer:**
+
+`Math.round(5.4) or Math.floor(5.4) // output: 5`
+
+**Justification:**
+
+```javascript
+Math.round(param); // It rounds to it's closest integer value by checking decimal pt. i.e., if decimal pt is <= 4 then it rounds down else >=5 then it rounds up!
+Math.floor(param); // It rounds down to it's closest integer value
+```
+
+### Question 5:
+
+**Question:** What is the difference between `Math.trunc(4.9)` and `Math.floor(4.9)`?
+
+**Answer:**
+
+`4`
+
+**Justification:**
+
+```javascript
+Math.trunc(param); // latest addition by ECMA international ES6+
+//  it returns integer part of given input irrespective of it's decimal place.
+Math.floor(param); // It rounds down to it's closest integer value
+```
+
+### Question 6:
+
+**Question:** What will `Math.pow(2, 3)` return?
+
+**Answer:**
+
+`8`
+
+**Justification:**
+
+```javascript
+Math.pow(2, 3); // Here, pow() method gives 1st input power as 2nd input.
+// Thus it would give exponentiation as 2 ** 3 -> 8.
+
+// NOTE: recommended to use ES6+ addition -> `**` operator.
+```
+
+---
+
+## Day 7: Truthy ✅ & Falsy ❎ Values in JavaScript
+
+### Question 7:
+
+**Question:** Which of the following is falsy in JavaScript? `0, "hello", {}, undefined, [], false`?
+
+**Answer:**  
+`0, undefined, false`
+
+**Justification:**  
+` 0, -0, undefined, false, '', ``, "", NaN, null ` are by-default Falsy Values ❎.
+
+### Question 8:
+
+**Question:** What is the output of `Boolean(" ")` in JavaScript?
+
+**Answer:**
+
+`true`
+
+**Justification:**  
+Because `" ",  ' ', ` ` ` contains a white-space. Thus, A whitespace is considered as an character in a string so it's a Truthy Value ✅.
+
+### Question 9:
+
+**Question:** Will `"0"` (a string) be treated as truthy or falsy?
+
+**Answer:**  
+`No i.e., true`
+
+**Justification:**  
+Just like in `question 8️`, Any character placed inside string or string literal is considered as an valid character which are Truthy Value ✅ by-default!.
+
+### Question 10:
+
+**Question:** What happens when you use `!!value` in JavaScript?
+
+**Answer:**
+
+`returns an Boolean Value (true or false).`
+
+**Justification:**
+
+Let's assume it contains a value like `0` (a Falsy Value ❎). Here double-negation operator `!!` is used to check whether value is Falsy ❎ || Truthy ✅. It would return `false` as EX:!0 -> `true` then, !true is `false`.
+
+### Question 11:
+
+**Question:** What is the output of `Boolean([])`?
+
+**Answer:**
+
+`true i.e., (Truthy Value ✅)`
+
+**Justification:**
+
+It returns `true` as empty `[], {}` i.e., objects and arrays are considered as Truthy Values ✅.
+
+### Question 12:
+
+**Question:** How does JavaScript evaluate the following: `if (null) { console.log("Truthy"); } else { console.log("Falsy"); }`?
+
+**Answer:**
+
+`Falsy`
+
+**Justification:**
+As if condition wouldn't satisy `null` as true this is because `null` is by-default a Falsy Value ❎. Thus, It would trigger the else block hence, output: `Falsy` ✅.
