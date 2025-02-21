@@ -460,3 +460,84 @@ console.log(`language: ${language} substring: ${language.slice(-6)} via slice()`
   i.e, "Hello".substring(-5, 5) // Hello Here - -5 or any -ve index will be treated as 0 || (zero).
   Whereas, "Hello".slice(-5) // Hello
 */
+
+
+/*
+  DAY 6: Math Object 1️⃣ 
+*/
+
+// 1️⃣ What will Math.floor(4.9) return?
+console.log(Math.floor(4.9));   // 4
+
+// 2️⃣ How do you generate a random number between 1 and 10 using the Math object?
+function getRandom(min, max){
+
+  // 1 - 10
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+  
+  // WORK:
+  // input (1, 10)
+  // (10 - 1 + 1)  =>  10
+  // Math.random() * 10 -> i.e., it will return 0 - 9 but not 10
+  //  + 1 i.e., now it will return 1 -> 10
+}
+
+// 3️⃣ What does Math.abs(-7) return, and why?
+console.log(Math.abs(-7));  // 7.
+/*
+`ANS.) the abs() method returns +ve value of any integer which -ve, Because it just removes negativity`
+*/
+
+// 4️⃣ How can you round 5.4 o the nearest integer using the Math object?
+/*
+  ANS: two ways.
+  1. round() to rounds randomly to the closest integer
+  2. ceil() rounds up (-->) to the closest integer
+  3. floor() rounds down (<--) to the closest integer
+*/
+console.log(Math.round(5.4));
+
+// 5️⃣ What is the difference between Math.trunc(4.9) and Math.floor(4.9)?
+// trunc() - latest addition by ECMA international ES6+
+//  it returns integer part of given input irrespective of it's decimal place
+// floor() - rounds down integer value closest to it!
+
+
+// 6️⃣ What will Math.pow(2, 3) return?
+// Math.pow(2, 3) -> pow() method gives 1st input power as 2nd input.
+// Thus it would give exponentiation as 2 ** 3 -> 8.
+console.log(Math.pow(2, 3));
+
+// NOTE: recommended to use ES6+ addition -> `**` operator.
+
+
+
+/*
+  DAY 7: Truthy ✅ & Falsy ❎ Values in JavaScript
+*/
+
+// 7️⃣ Which of the following is falsy in JavaScript? 0, "hello", {}, undefined, [], false ?
+// ANS: Falsy Values ❎ are 0, undefined, false.
+
+// 8️⃣ What is the output of Boolean(" ") in JavaScript?
+// ANS: true because " " or ' ' or ` ` contains a white-space.
+// Thus, A whitespace is considered as an character in a string so it's a Truthy Value ✅
+
+// 9️⃣ Will "0" (a string) be treated as truthy or falsy?
+// "0" will be obviously treated as Truthy Value ✅.
+// Just like in question 8️⃣, Any character placed inside string or string literal is considered as an valid character which are Truthy by-default!
+
+// 🔟 What happens when you use !!value in JavaScript?
+// It will give negate or reverse the Boolean Value  **twice** i.e., strict Boolean Value conversion.
+// But let's assume it contains a value like '0' (Falsy Value ❎)
+// Here double-negation operator `!!` is used to check whether value is Falsy ❎ || Truthy ✅.
+// It would return `false` as EX:!0 -> true then, !true is false.
+
+
+// 1️⃣1️⃣ What is the output of Boolean([])?
+// It returns `true` as empty [], {} i.e., objects and arrays are considered as Truthy Values ✅.
+
+
+// 1️⃣2️⃣ How does JavaScript evaluate the following: if (null) { console.log("Truthy"); } else { console.log("Falsy"); }?
+// As if condition wouldn't satisy "null" as true this is because `null` is by-default Falsy Value ❎.
+// It would trigger the else block hence, `Falsy` ✅.
