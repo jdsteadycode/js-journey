@@ -620,7 +620,7 @@ As if condition wouldn't satisy `null` as true this is because `null` is by-defa
 
 ---
 
-## Day 7: Comparison Operators in JavaScript 💥
+## Day 7: Comparison Operators in JavaScript ❕❔
 
 ### Question 13:
 
