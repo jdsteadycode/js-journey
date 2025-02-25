@@ -620,7 +620,7 @@ As if condition wouldn't satisy `null` as true this is because `null` is by-defa
 
 ---
 
-## Day 7: Comparison Operators in JavaScript ❕❔
+## Day 8: Comparison Operators in JavaScript ❕❔
 
 ### Question 13:
 
@@ -706,3 +706,160 @@ It checks if given expression is larger than the other or not!
 Also JS Engine does implicit type coversion for the expression if needed!
 As `"5" -> 5` so, `5 > 3` which is `true`.
 Thus it returns Boolean `true`.
+
+---
+
+## Day 9: Logical Operators in JavaScript 🤖
+
+### Question 1:
+
+**Question:** What is the output of the following code?
+
+```javascript
+console.log(true && 0);
+console.log(false || "Hello");
+console.log(!"");
+```
+
+**Answer & Justification:**
+`console.log(true && 0)` -> `0`
+This happens as `&&` Operator assesses `Truthy and Falsy` Values.
+And, as here `&&` Operator returns Truthy Value only if both values or expressions are `Truthy or true`.
+As if here `0` is the Falsy Value it straightaway returns `Falsy Value`.
+
+//. 2
+`console.log(false || "Hello")` -> `"Hello"`
+Here Logical `||` Operator also assesses the Truthy and Falsy Value But, in a different way.
+As, here it would return Truthy Value even if there's only one Truthy Value or a Falsy Value.
+So it returns "Hello".
+
+//. 3
+`console.log(!"")` -> `true`.
+`!` is Logical Not or Negation Operator as, it reverses the Boolean `Truthy || Falsy` value and returns the reversed Boolean Value.
+So here As `""` is a Falsy Value Thus, `!""` returns it's opposite i.e., `True or Truthy` Value.
+
+**NOTE:**logical operators do work for Truthy & Falsy Values...
+
+### Question 2:
+
+**Question:** What is the output of the following code?
+
+```javascript
+console.log(null || undefined);
+console.log(1 && null && "Hello");
+console.log(false || 0 || "");
+```
+
+**Answer & Justification:**
+`console.log(null || undefined);` // `undefined`
+As `||` Operator checks for atleast one Truthy Value in whole input expression.
+So, it goes to second input value to see whether if it's Truthy Value or true.
+Since As it finds both are Falsy Values [null & undefined] So, it prints second Falsy Value.
+
+//. 2
+`console.log(1 && null && "Hello");` // `null`
+Here Logical `&&` Operator also assesses the Truthy and Falsy Value.
+As, here it would return Truthy Value if all are Truthy Value or True.
+Since, As here one value `null` is a Falsy Value thus, it would return null.
+
+//. 3
+`console.log(false || 0 || "");` // `""`
+As `||` Operator checks for atleast one Truthy Value in whole input expression.
+Here, as all are Falsy Values so when goes to see one by one and doesn't find a Truthy Value.
+It returns last Falsy Value i.e, `""`
+
+**NOTE:**logical operators do work for Truthy & Falsy Values...
+
+### Question 3:
+
+**Question:** What will be the output of the following? (Nullish Coalescing Operator `??`)
+
+```javascript
+console.log(0 ?? "Default");
+console.log(null ?? "Default");
+console.log(undefined ?? "Fallback");
+```
+
+**Answer & Justification:**
+`console.log(0 ?? "Default");` -> `0`
+As `'??'` Operator only checks for a null or undefined value.
+Here above, 0 isn't null || undefined so it returns 0.
+Because 0 is just a Falsy Value.
+
+//. 2
+`console.log(null ?? "Default");` -> `"Default"`
+As `'??'` Operator only checks for a null or undefined value.
+Here above, null is one of the special values. Thus, it goes to next value and returns "Default"
+Because "Default" is just a Truthy Value.
+
+//. 3
+`console.log(undefined ?? "Fallback");` -> `"Fallback"`
+As `'??'` Operator only checks for a null or undefined value.
+Here above, undefined is one of the special values. Thus, it goes to next value and returns "Fallback"
+Because "Fallback" is just a Truthy Value.
+
+### Question 4:
+
+**Question:** Output ?
+
+```javascript
+console.log(null ?? 0 ?? "Fallback");
+console.log(undefined ?? "" ?? "Text");
+```
+
+**Answer & Justification:**
+`console.log(null ?? 0 ?? "Fallback");` -> `0`
+Here `??` Operator checks only for special values [null, undefined].
+So here it goes from start -->
+null ?? 0 → 0 (because null is ignored, 0 stays).
+0 ?? "Fallback" → 0 (since 0 is NOT null or undefined, it stays).
+
+// 2.
+`console.log(undefined ?? "" ?? "Text");` -> `""`
+Here `??` Operator checks only for special values [null, undefined].
+So here it goes from start -->
+undefined ?? "" → "" (because undefined is ignored).
+"" ?? "Text" → "" (because empty string is NOT null or undefined).
+
+### Question 5:
+
+**Question:** Output ?
+
+```javascript
+console.log("Text" && false && 42);
+```
+
+**Answer & Justification:**
+`console.log("Text" && false && 42);` -> `false`
+Here Logical `&&` Operator also assesses the Truthy and Falsy Value.
+As, here it would return Truthy Value if all are Truthy Value or True.
+Since, As here one value `false` is a Falsy Value thus, it would return false.
+
+### Question 6:
+
+**Question:** Output ?
+
+```javascript
+console.log(0 || NaN || "Hello");
+```
+
+**Answer & Justification:**
+`console.log(0 || NaN || "Hello");` -> `"Hello"`
+As `||` Operator checks for atleast one Truthy Value in whole input expression.
+Here, as all are Falsy Values Except last one "Hello" [Any valid String] so when goes to see one by one it finds "Hello".
+It returns last Value which is Truthy i.e, `"Hello"`
+
+### Question 7:
+
+**Question:** Output ?
+
+```javascript
+console.log(("" && 5) || "JavaScript");
+```
+
+**Answer & Justification:**
+`console.log("" && 5 || "JavaScript");` -> `JavaScript`
+As above contains two Logical Operators one by one i.e., `[&&, ||]`.
+Here JS Engine begins from start,
+And it finds first expression as ("" && 5) -> it returns "" As `&&` Operator checks for the any one falsy value.
+Then second expression ("" || "JavaScript") -> it finally returns output as "JavaScript" As `||` Operator only checks for one Truthy Value.
