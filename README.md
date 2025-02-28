@@ -863,3 +863,168 @@ As above contains two Logical Operators one by one i.e., `[&&, ||]`.
 Here JS Engine begins from start,
 And it finds first expression as ("" && 5) -> it returns "" As `&&` Operator checks for the any one falsy value.
 Then second expression ("" || "JavaScript") -> it finally returns output as "JavaScript" As `||` Operator only checks for one Truthy Value.
+
+---
+
+## Day 10: Decision Making in JavaScript (IF Statement) 🎯
+
+### Question 1:
+
+**Question:** What is the output of the following code?
+
+```javascript
+if (5 > 2) {
+  console.log("JavaScript is awesome!");
+}
+```
+
+**Answer & Justification:**
+Here, inside the IF condition `(5 > 2)` which is `true`.
+As If statement normally satisifies `true or Truthy` values.
+Thus, it would log the `JavaScript is awesome!`.
+
+### Question 2:
+
+**Question:** What is the output of the following code?
+
+```javascript
+if (0) {
+  console.log("This will print!");
+}
+console.log("End of script");
+```
+
+**Answer & Justification:**
+Here, inside the If condition it has `0` which is a `Falsy` Value. & As If only satisfies the `Truthy or true` values.
+Thus it would skip it and just log `End of Script`. (As it's outside the If condition thus ignored).
+
+### Question 3:
+
+**Question:** What is the output of the following code?
+
+```javascript
+if (" ") {
+  console.log("Hello, World!");
+}
+console.log("Script continues...");
+```
+
+**Answer & Justification:**
+Here, inside the If condition it has `" "` (which has white-space character!) & it's a `Truthy` Value.
+& If statement always satisfies the `Truthy` Values so it would execute or log `Hello, World!`.
+And, after JS Engine logs `Script Continues...` (As it's outside the If-scope)!
+
+### Question 4:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let num = -10;
+if (num) {
+  console.log("Number is valid!");
+}
+console.log("Check complete.");
+```
+
+**Answer & Justification:**
+Here we have a number i.e., `-10` inside `num`.
+As `-10` is a `Truthy` Value and it's inside the If statement so it logs `Number is valid!`
+And after this, JS Engine logs `Check Complete.`.
+
+### Question 5:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let data = null;
+if (data) {
+  console.log("Data exists!");
+}
+console.log("Process finished.");
+```
+
+**Answer & Justification:**
+Here we have `data` consisting of `null`.
+Where `null` is a `Falsy` Value this means inside above If Statement condition it wouldn't satisfy thus un-executed.
+Then, JS Engine logs `Process finished` (As it's outside the scope of If Statement)
+
+### Question 6:
+
+**Question:** What is the output of the following code?
+
+```javascript
+if ("false") {
+  console.log("Truthy value!");
+}
+console.log("Execution completed.");
+```
+
+**Answer & Justification:**
+Here inside the If statement condition we've `"false"` (A String) which is a `Truthy` Value.
+So here If condition would be satisfied and logged `Truthy value!`.
+And after than JS Engine logs `Execution completed`.
+
+### Question 7:
+
+**Question:** What is the output of the following code?
+
+```javascript
+if (undefined) {
+  console.log("Executed!");
+}
+console.log("Code running...");
+```
+
+**Answer & Justification:**
+Here inside the If statement condition we've `undefined`, Since it's a `Falsy` Value.
+If condition won't be satisfied there thus execution would be skipped.
+And, JS Engine would simply log `Code running...`.
+
+### Question 8:
+
+**Question:** What is the output of the following code?
+
+```javascript
+if ("0") {
+  console.log("Valid input!");
+}
+console.log("Script executed!");
+```
+
+**Answer & Justification:**
+Here inside the If statement condition we've `0`. Thus, Any String is `Truthy` Value.
+So If statement would satisfy the condition and log the `Valid input!` in console.
+And after then, JS Engine would execute `Script Executed`.
+
+### Question 9:
+
+**Question:** What is the output of the following code?
+
+```javascript
+if (NaN) {
+  console.log("Number accepted!");
+}
+console.log("Checking done!");
+```
+
+**Answer & Justification:**
+Here inside the If statement condition we've `NaN` which is a `Falsy` Value.
+Thus, If Statement wouldn't satisfy the condition and skip the execution.
+And after JS Engine would log `Checking done`.
+
+### Question 9:
+
+**Question:** What is the output of the following code?
+
+```javascript
+if (!NaN) {
+  console.log("Falsy Value");
+}
+console.log("Executed code...");
+```
+
+**Answer & Justification:**
+Here inside the If statement condition we've `!NaN` as NaN is a `Falsy` Value.
+But, it has negated using `!` (Logical Not Operator) this reverses the Boolean value `(false -> true)`.
+Thus, If Statement would satisfy the condition and log `Falsy Value`.
+And after JS Engine would log Executed code...`.
