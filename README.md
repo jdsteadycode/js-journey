@@ -1028,3 +1028,181 @@ Here inside the If statement condition we've `!NaN` as NaN is a `Falsy` Value.
 But, it has negated using `!` (Logical Not Operator) this reverses the Boolean value `(false -> true)`.
 Thus, If Statement would satisfy the condition and log `Falsy Value`.
 And after JS Engine would log Executed code...`.
+
+---
+
+## Day 10: Decision Making in JavaScript (IF Statement) 🎯
+
+### Question 1:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let num = 10;
+
+if (num > 10) {
+  console.log("Greater than 10");
+} else if (num === 10) {
+  console.log("Exactly 10");
+} else {
+  console.log("Less than 10");
+}
+
+console.log("Check complete");
+```
+
+**Answer & Justification:**
+Output: Exactly 10. Check Complete
+As as `num` is `10`. So 1st condition of If Statement is skipped (`10 not > 10`).
+Then, JS Engine goes to 2nd condition which gets satisfied as (`10 === 10`) and executes the code beneath (`Exactly 10`).
+Then it jumps out of IF-Else-If-Else block and just logs `check complete` to console.
+
+### Question 2:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let score = 75;
+
+if (score >= 90) {
+  console.log("Grade: A");
+} else if (score >= 80) {
+  console.log("Grade: B");
+} else if (score >= 70) {
+  console.log("Grade: C");
+} else {
+  console.log("Grade: F");
+}
+
+console.log("Evaluation done");
+```
+
+**Answer & Justification:**
+Output: Grade C. Evaluation done.
+As as `score` is `75`. So 1st condition of If Statement is skipped (`75 not >= 90`).
+Also JS Engine would skip the 2nd condition (`75 >= 80`).
+Then, JS Engine goes to 3rd condition which gets satisfied as (`75 >= 70`) and executes the code beneath (`Grade C`).
+Then it jumps out of IF-Else-If-Else block and just logs `Evaluation done.` to console.
+
+### Question 3:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let temperature = 32;
+
+if (temperature > 40) {
+  console.log("It's very hot!");
+} else if (temperature > 30) {
+  console.log("It's warm.");
+} else if (temperature > 20) {
+  console.log("It's cool.");
+} else {
+  console.log("It's cold.");
+}
+
+console.log("Weather check complete.");
+```
+
+**Answer & Justification:**
+Output: It's warm. Weather check complete.
+As as `temperature` is `32`. So 1st condition of If Statement is skipped (`32 not > 40`).
+Then, JS Engine goes to 2nd condition which gets satisfied as (`32 > 30`) and executes the code beneath (`It's warm.`).
+Then it jumps out of IF-Else-If-Else block and just logs `Weather check complete` to console.
+
+### Question 4:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let age = 15;
+
+if (age >= 18) {
+  console.log("Eligible to vote");
+} else if (age >= 13) {
+  console.log("Teenager");
+} else {
+  console.log("Child");
+}
+
+console.log("Age check complete.");
+```
+
+**Answer & Justification:**
+Output: Teenager. Age check complete.
+As as `age` is `15`. So 1st condition of If Statement is skipped (`15 not >= 18`).
+Then, JS Engine goes to 2nd condition which gets satisfied as (`15 >= 13`) and executes the code beneath (`Teenager.`).
+Then it jumps out of IF-Else-If-Else block and just logs `Age check complete` to console.
+
+### Question 5:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let num = -5;
+
+if (num > 0) {
+  console.log("Positive number");
+} else if (num < 0) {
+  console.log("Negative number");
+} else {
+  console.log("Zero");
+}
+
+console.log("Number check complete.");
+```
+
+**Answer & Justification:**
+Output: Negative number. Number check complete.
+As as `num` is `-5`. So 1st condition of If Statement is skipped (`-5 not > 0`).
+Then, JS Engine goes to 2nd condition which gets satisfied as (`-5 < 0`) and executes the code beneath (`Negative number.`).
+Then it jumps out of IF-Else-If-Else block and just logs `Number check complete` to console.
+
+### Question 6:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let speed = 120;
+
+if (speed < 60) {
+  console.log("Slow");
+} else if (speed <= 100) {
+  console.log("Moderate speed");
+} else {
+  console.log("Fast");
+}
+
+console.log("Speed check complete.");
+```
+
+**Answer & Justification:**
+Output: Fast. Speed check complete.
+As as `speed` is `120`. So 1st condition of If Statement is skipped (`120 not < 60`).
+Also JS Engine skips the 2nd condition as (`120 not <= 100`).
+Lastly the, JS Engine just goes to `else` block and executes the code beneath (`Fast`)
+Then it jumps out of IF-Else-If-Else block and just logs `Speed check complete` to console.
+
+### Question 7:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let battery = 50;
+
+if (battery > 80) {
+  console.log("Battery full");
+} else if (battery > 30) {
+  console.log("Battery medium");
+} else {
+  console.log("Battery low");
+}
+
+console.log("Battery check complete.");
+```
+
+**Answer & Justification:**
+Output: Battery medium. Battery check complete.
+As as `battery` is `50`. So 1st condition of If Statement is skipped (`50 not > 80`).
+Then, JS Engine goes to 2nd condition which gets satisfied as (`50 > 30`) and executes the code beneath (`Battery medium`).
+Then it jumps out of IF-Else-If-Else block and just logs `Battery check complete` to console.
