@@ -1031,7 +1031,7 @@ And after JS Engine would log Executed code...`.
 
 ---
 
-## Day 10: Decision Making in JavaScript (IF Statement) 🎯
+## Day 11: Optimizing Decision Making in JavaScript (else-if & else) 🎯
 
 ### Question 1:
 
