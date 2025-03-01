@@ -1117,7 +1117,7 @@ console.log(Math.pow(2, 3));
 
 
 /*
-  DAY 12: Learning Nested If-Else Statements in JavaScript 🎯 🎯
+  DAY 12: Learning Nested If-Else Statements in JavaScript 🎯🎯
 */
 
 // 1️⃣ What is the output of the following code?
