@@ -1206,3 +1206,190 @@ Output: Battery medium. Battery check complete.
 As as `battery` is `50`. So 1st condition of If Statement is skipped (`50 not > 80`).
 Then, JS Engine goes to 2nd condition which gets satisfied as (`50 > 30`) and executes the code beneath (`Battery medium`).
 Then it jumps out of IF-Else-If-Else block and just logs `Battery check complete` to console.
+
+## Day 12: Learning Nested If-Else Statements in JavaScript 🎯 🎯
+
+### Question 1:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let num = 8;
+
+if (num > 5) {
+  if (num % 2 === 0) {
+    console.log("Even and greater than 5");
+  } else {
+    console.log("Odd and greater than 5");
+  }
+} else {
+  console.log("5 or less");
+}
+console.log("Check done.");
+```
+
+**Answer & Justification:**
+Output: Evem and greater than 5. Check done.
+As as `num` is `8`. So 1st condition of If Statement is satisfied (`8 > 5`).
+Then JS Engine goes inside it and sees nested condition (`8 % 2 === 0`) which is also `true` thus it executes the code (`Even and greater than 5`).
+Then it instantly jumps out of IF-Else-If-Else block and just logs `Check done` to console.
+
+### Question 2:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let temperature = 15;
+
+if (temperature > 30) {
+  console.log("Hot day!");
+} else {
+  if (temperature > 20) {
+    console.log("Warm day!");
+  } else {
+    console.log("Cold day!");
+  }
+}
+console.log("Weather checked.");
+```
+
+**Answer & Justification:**
+Output: Cold day!. Weather checked.
+As as `temperature` is `15`. So 1st condition of If Statement is skipped (`15 not > 30`).
+Then, JS Engine goes inside `else` block as default.
+And it finds nested `if-else` in which If condition is not satisfied as (`15 not > 20`).
+So it executes the nested `else` block by default (`Cold day!`).
+Then it jumps out of IF-Else-If-Else block and just logs `Weather checked.` to console.
+
+### Question 3:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let marks = 85;
+
+if (marks >= 90) {
+  console.log("Grade A");
+} else {
+  if (marks >= 75) {
+    console.log("Grade B");
+    if (marks >= 80) {
+      console.log("Good Performance");
+    }
+  } else {
+    console.log("Grade C");
+  }
+}
+console.log("Evaluation done.");
+```
+
+**Answer & Justification:**
+Output: Grade B. Good performance. Evaluation done.
+As as `marks` is `85`. So 1st condition of If Statement is skipped (`85 not >= 90`).
+Then, JS Engine goes inside `else` block as default.
+And, it finds nested `if-else` in which If condition is satisfied as (`85 > 75`) thus it logs (`Grade B`).
+Again it finds a nested `if` block with satisfied condition (`85 > 80`) thus logs (`Good performance`).
+Then it jumps out of IF-Else-If-Else block and just logs `Evaluation done.` to console.
+
+### Question 4:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let value = -3;
+
+if (value >= 0) {
+  console.log("Positive number");
+  if (value % 2 === 0) {
+    console.log("Even number");
+  }
+} else {
+  console.log("Negative number");
+  if (value < -5) {
+    console.log("Very low value");
+  }
+}
+console.log("Check completed.");
+```
+
+**Answer & Justification:**
+Output: Negative number. Check completed.
+As `value` is `-2`. So 1st condition of If Statement is skipped (`-1 not >= 0`).
+Then, JS Engine goes inside `else` block as default & logs (`Negative number`).
+And, it finds a nested `if` block with condition (`-3 < -5`) which is `false` so it skips it.
+Then it jumps out of IF-Else-If-Else block and just logs `Check completed.` to console.
+
+### Question 5:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let num = 20;
+
+if (num % 2 === 0) {
+  console.log("Even number");
+  if (num > 10) {
+    console.log("Greater than 10");
+  }
+} else {
+  console.log("Odd number");
+}
+console.log("Number checked.");
+```
+
+**Answer & Justification:**
+Output: Even number. Greater than 10. Number checked.
+As as `num` is `20`. So 1st condition of If Statement is satisfied (`20 % 2 === 0`) & logs (`Even number`).
+Then, JS Engine finds nested `if` block with condition (`20 > 10`) which is `true` thus it again logs (`Greater than 10`).
+Then it jumps out of IF-Else-If-Else block and just logs `Number checked.` to console.
+
+### Question 6:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let score = 95;
+
+if (score >= 90) {
+  console.log("Excellent");
+  if (score === 100) {
+    console.log("Perfect Score!");
+  }
+} else {
+  console.log("Needs Improvement");
+}
+console.log("Evaluation finished.");
+```
+
+**Answer & Justification:**
+Output: Excellent. Evaluation finished.
+As as `score` is `95`. So 1st condition of If Statement is satisfied (`95 >= 90`) hence, logs (`Excellent`).
+Then JS Engine goes finds a nested `if` block with condition (`95 === 100`) which is `false` so it instantly skips it.
+Then it jumps out of IF-Else block and just logs `Evaluation finished` to console.
+
+### Question 7:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let age = 10;
+
+if (age > 5) {
+  console.log("Child");
+  if (age > 12) {
+    console.log("Teenager");
+  } else {
+    console.log("Still a kid");
+  }
+} else {
+  console.log("Toddler");
+}
+console.log("Age check done.");
+```
+
+**Answer & Justification:**
+Output: Child. Still a kid. Age check done.
+As as `age` is `10`. So 1st condition of If Statement is satisfied (`10 > 5`) hence, logs (`Child`).
+Then JS Engine goes finds a nested `if-else` block where `if` condition (`10 > 12`) remains un-satisfied so it instantly skips it.
+Thus, it directly goes to nested `else` part and logs (`Still a kid`).
+Then it jumps out of IF-Else block and just logs `Age check done.` to console.
