@@ -1417,7 +1417,7 @@ switch (fruit) {
 ```
 
 **Answer & Justification:**
-Output: `B) Apple is red. Grape is purple.`
+Output: `Apple is red. Grape is purple.`
 as fruit is intialized as `apple`.
 What happens here is as `switch` evaluates the strictly matching value thus, when it sees `apple` it logs `Apple is red`.
 Then after as there's missing `break` keyword it executes the another underlying case due to this thus logging `Grape is purple`.
@@ -1444,7 +1444,7 @@ switch (day) {
 ```
 
 **Answer & Justification:**
-Output: `A) It's a weekday!`
+Output: `It's a weekday!`
 Since there are mutliple cases given as `Monday` and `Tuesday`.
 What happens here is when JS Engine finds `Monday` equal to `case` then it simply logs `It's a weekday!`.
 Also as there's a `break` keyword used JS Engine instantly jumps out when the execution is done.
@@ -1467,7 +1467,7 @@ switch (num) {
 ```
 
 **Answer & Justification:**
-Output: `.C) Five Not Five`.
+Output: `Five Not Five`.
 As `num` is `5`, Here in `switch-case` it matches the 1st `case` i.e., 5.
 So it just logs `Five` to console.
 But, as there's no `break` keyword used it `default-case` would be executed as well logging `Not Five`.
@@ -1491,7 +1491,7 @@ switch (x) {
 ```
 
 **Answer & Justification:**
-Output: `B) String One`.
+Output: `String One`.
 Since `x` is String i.e., `"1"`.
 Here, only 2nd `case` is instantly evaluated due to strict `===` check thus, logging `String One`.
 As then JS Engine exits the `switch-case` after match found as `break` keyword is properly used here!
@@ -1516,7 +1516,7 @@ switch (color) {
 ```
 
 **Answer & Justification:**
-Output: `C) The color is blue. The color is green`.
+Output: `The color is blue. The color is green`.
 as color is intialized as `blue`.
 What happens here is as `switch` evaluates the strictly matching value thus, when it sees `blue` it logs `The color is blue`.
 Then after as there's missing `break` keyword it executes the another underlying case due to this thus logging `The color is green.`
@@ -1547,7 +1547,7 @@ switch (grade) {
 ```
 
 **Answer & Justification:**
-Output: `B) Well done!`.
+Output: `Well done!`.
 Since grade is initialized as `B`.
 And `switch-case` contains two group `case(s)` as `case "B"` and `case "C"`.
 JS Engine here finds appropriate match so it simply logs `case "B"` block as `Well done!`.
@@ -1574,7 +1574,7 @@ switch (size) {
 ```
 
 **Answer & Justification:**
-Output: `A) Medium size selected. Large size selected`.
+Output: `Medium size selected. Large size selected`.
 as size is intialized as `M`.
 What happens here is as `switch` evaluates the strictly matching value thus, when it sees `M` it logs `Medium size selected.`
 Then after as there's missing `break` keyword it executes the another underlying case due to this thus logging `Large size selected.`
