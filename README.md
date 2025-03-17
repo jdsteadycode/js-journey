@@ -1393,3 +1393,189 @@ As as `age` is `10`. So 1st condition of If Statement is satisfied (`10 > 5`) he
 Then JS Engine goes finds a nested `if-else` block where `if` condition (`10 > 12`) remains un-satisfied so it instantly skips it.
 Thus, it directly goes to nested `else` part and logs (`Still a kid`).
 Then it jumps out of IF-Else block and just logs `Age check done.` to console.
+
+## Day 13: Learning switch-case Control Statement in JavaScript 🎯🎯🎯
+
+### Question 1:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let fruit = "apple";
+switch (fruit) {
+  case "banana":
+    console.log("Banana is yellow.");
+    break;
+  case "apple":
+    console.log("Apple is red.");
+  case "grape":
+    console.log("Grape is purple.");
+    break;
+  default:
+    console.log("Unknown fruit.");
+}
+```
+
+**Answer & Justification:**
+Output: `B) Apple is red. Grape is purple.`
+as fruit is intialized as `apple`.
+What happens here is as `switch` evaluates the strictly matching value thus, when it sees `apple` it logs `Apple is red`.
+Then after as there's missing `break` keyword it executes the another underlying case due to this thus logging `Grape is purple`.
+But, it ignores other cases like `banana` as they do-not match down there & `default` is ignored due to `break` keyword\*\*
+
+### Question 2:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let day = "Monday";
+switch (day) {
+  case "Monday":
+  case "Tuesday":
+    console.log("It's a weekday!");
+    break;
+  case "Saturday":
+  case "Sunday":
+    console.log("It's a weekend!");
+    break;
+  default:
+    console.log("Invalid day!");
+}
+```
+
+**Answer & Justification:**
+Output: `A) It's a weekday!`
+Since there are mutliple cases given as `Monday` and `Tuesday`.
+What happens here is when JS Engine finds `Monday` equal to `case` then it simply logs `It's a weekday!`.
+Also as there's a `break` keyword used JS Engine instantly jumps out when the execution is done.
+
+NOTE: Even if day is `Tuesday` it will log `It's a weekday!`, because there are multiple `case` given back down.
+So any matching case would mean to execution of the underlying code\*\*
+
+### Question 3:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let num = 5;
+switch (num) {
+  case 5:
+    console.log("Five");
+  default:
+    console.log("Not Five");
+}
+```
+
+**Answer & Justification:**
+Output: `.C) Five Not Five`.
+As `num` is `5`, Here in `switch-case` it matches the 1st `case` i.e., 5.
+So it just logs `Five` to console.
+But, as there's no `break` keyword used it `default-case` would be executed as well logging `Not Five`.
+
+### Question 4:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let x = "1";
+switch (x) {
+  case 1:
+    console.log("Number One");
+    break;
+  case "1":
+    console.log("String One");
+    break;
+  default:
+    console.log("Unknown");
+}
+```
+
+**Answer & Justification:**
+Output: `B) String One`.
+Since `x` is String i.e., `"1"`.
+Here, only 2nd `case` is instantly evaluated due to strict `===` check thus, logging `String One`.
+As then JS Engine exits the `switch-case` after match found as `break` keyword is properly used here!
+
+### Question 5:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let color = "blue";
+switch (color) {
+  case "red":
+    console.log("The color is red.");
+  case "blue":
+    console.log("The color is blue.");
+  case "green":
+    console.log("The color is green.");
+    break;
+  default:
+    console.log("Unknown color.");
+}
+```
+
+**Answer & Justification:**
+Output: `C) The color is blue. The color is green`.
+as color is intialized as `blue`.
+What happens here is as `switch` evaluates the strictly matching value thus, when it sees `blue` it logs `The color is blue`.
+Then after as there's missing `break` keyword it executes the another underlying case due to this thus logging `The color is green.`
+But, it ignores other cases like `red` as they do-not match down there & `default` is ignored due to `break` keyword\*\*
+
+### Question 6:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let grade = "B";
+switch (grade) {
+  case "A":
+    console.log("Excellent!");
+    break;
+  case "B":
+  case "C":
+    console.log("Well done!");
+    break;
+  case "D":
+    console.log("You passed.");
+  case "F":
+    console.log("Better luck next time.");
+    break;
+  default:
+    console.log("Invalid grade.");
+}
+```
+
+**Answer & Justification:**
+Output: `B) Well done!`.
+Since grade is initialized as `B`.
+And `switch-case` contains two group `case(s)` as `case "B"` and `case "C"`.
+JS Engine here finds appropriate match so it simply logs `case "B"` block as `Well done!`.
+And, given `break` keyword allows instant exit from the `switch-case` block.
+
+### Question 7:
+
+**Question:** What is the output of the following code?
+
+```javascript
+let size = "M";
+switch (size) {
+  case "S":
+    console.log("Small size selected.");
+    break;
+  case "M":
+    console.log("Medium size selected.");
+  case "L":
+    console.log("Large size selected.");
+    break;
+  default:
+    console.log("Invalid size.");
+}
+```
+
+**Answer & Justification:**
+Output: `A) Medium size selected. Large size selected`.
+as size is intialized as `M`.
+What happens here is as `switch` evaluates the strictly matching value thus, when it sees `M` it logs `Medium size selected.`
+Then after as there's missing `break` keyword it executes the another underlying case due to this thus logging `Large size selected.`
+But, it ignores other cases like `S` as it does-not match down! & `default` is ignored due to `break` keyword\*\*
