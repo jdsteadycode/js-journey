@@ -1579,3 +1579,157 @@ as size is intialized as `M`.
 What happens here is as `switch` evaluates the strictly matching value thus, when it sees `M` it logs `Medium size selected.`
 Then after as there's missing `break` keyword it executes the another underlying case due to this thus logging `Large size selected.`
 But, it ignores other cases like `S` as it does-not match down! & `default` is ignored due to `break` keyword\*\*
+
+## Day 14: Learning Ternary Operator ❕❔
+
+### Question 1:
+
+```javascript
+let age = 20;
+let message = age >= 18 ? "You are an adult" : "You are a minor";
+console.log(message);
+```
+
+**Answer & Justification:**
+Output: `You are an adult`.
+As Ternary Operator evaluates on the basis of either `true` or `Truthy Value` as expression/ condition..
+So `age` is currently above `18` i.e., `20` thus it's `true` and JS Engine goes for `?` part and executes instantly
+`"You are an adult"`
+
+### Question 2:
+
+```javascript
+let score = 85;
+let grade = score > 90 ? "A" : score > 75 ? "B" : "C";
+
+console.log(grade);
+```
+
+**Answer & Justification:**
+Output: `B`.
+As Ternary Operator evaluates on the basis of either `true` or `Truthy Value` as expression/ condition..
+So `score` is currently less than `90` i.e., `85` thus it's `false` and JS Engine goes for `:` part.
+Thus, now JS Engine finds another else-if case where `score > 75` which evaluates to `true` hence it instantly goes for `?` block printing `grade` as `"B"`.
+
+### Question 3:
+
+```javascript
+let isLoggedIn = false;
+let welcomeMsg = isLoggedIn ? "Welcome back!" : 5 + 5;
+console.log(welcomeMsg);
+```
+
+**Answer & Justification:**
+Output: `10`.
+As Ternary Operator evaluates on the basis of either `true` or `Truthy Value` as expression/ condition..
+So `isLogged` currently evaluates to `false` i.e., `false` thus JS Engine goes for `:` part and executes instantly
+`10` as `5+5 = 10` storing it in `WelcomeMsg`.
+
+### Question 4:
+
+```javascript
+function sayHello() {
+  return "Hello!";
+}
+
+let shouldGreet = true;
+let greeting = shouldGreet ? sayHello() : "No greeting";
+console.log(greeting);
+```
+
+**Answer & Justification:**
+Output: `Hello!`.
+As Ternary Operator evaluates on the basis of either `true` or `Truthy Value` as expression/ condition..
+So `shouldGreet` currently evaluates to `true` i.e., `true` thus JS Engine goes for `?` part and executes instantly
+invkoing `sayHello()` -> returns `Hello!` as the `greeting`.
+
+### Question 5:
+
+```javascript
+let items = [];
+let message = items.length ? "Items found" : "Cart is empty";
+console.log(message);
+```
+
+**Answer & Justification:**
+Output: `Cart is empty`.
+As Ternary Operator evaluates on the basis of either `true` or `Truthy Value` as expression/ condition..
+So `items` is currently empty array `[]` thus `items.length` evaluates to `0` i.e., `false`
+(Because, No items in the cart Yet! So, 0 or -0 are considered as Falsy Values Right!)
+thus JS Engine goes for `:` part and executes instantly `"Cart is empty"`.
+
+### Question 6:
+
+```javascript
+let loggedIn = false;
+let user = loggedIn ? "User1" : console.log("Please log in first");
+```
+
+**Answer & Justification:**
+Output: `Please log in first`.
+As Ternary Operator evaluates on the basis of either `true` or `Truthy Value` as expression/ condition..
+So `loggedIn` is currently a Boolean `false` thus `loggedIn` evaluates to `false` i.e., `false`
+thus JS Engine goes for `:` part and executes instantly shows `"Please log in first"` and just beneath it returns `undefined` as (console.log() method by-default only shows the given input and doesn't return anything so `undefined`)
+making `user` value as `undefined` as simple!.
+
+### Question 7:
+
+```javascript
+let marks = 45;
+let result = marks > 90 ? "A+" : marks > 75 ? "A" : marks >= 50 ? "B" : "Fail";
+console.log(result);
+```
+
+**Answer & Justification:**
+Output: `Fail`.
+As Ternary Operator evaluates on the basis of either `true` or `Truthy Value` as expression/ condition..
+So `marks` is currently `45` thus `result` evaluates to `false`
+thus JS Engine skips all condtion-checks before goes for last `:` part and executes instantly shows `"Fail"`.
+
+### Question 8:
+
+```javascript
+let isActive = "false";
+let message = isActive ? "Active" : "Inactive";
+console.log(message);
+```
+
+**Answer & Justification:**
+Output: `Active`.
+As Ternary Operator evaluates on the basis of either `true` or `Truthy Value` as expression/ condition..
+So `isActive` is currently `"false"`, (As any filled String except "" is considered as `Truthy Value` Right)
+i.e., `Truthy Value` `message` evaluates to `true`
+thus JS Engine goes for last `?` part and executes instantly shows `"Active"`.
+
+### Question 9:
+
+```javascript
+function greet(name) {
+  return name ? `Hi, ${name}` : "Hi, guest";
+}
+
+let user = "";
+console.log(greet(user));
+```
+
+**Answer & Justification:**
+Output: `Hi, guest`.
+As Ternary Operator evaluates on the basis of either `true` or `Truthy Value` as expression/ condition..
+So `user` is currently `""`, (As Empty String `/`/``, '', "" is considered as `Falsy Value` Right)
+i.e.,`Falsy Value` So, beneath`greet("")`function's code -
+the JS Engine goes for last`:`part and executes instantly returning`"Hi, guest"`.
+
+### Question 10:
+
+```javascript
+let temp = 38;
+
+let weather = `Today's weather is ${temp > 35 ? "Hot" : "Pleasant"}`;
+console.log(weather);
+```
+
+**Answer & Justification:**
+Output: `Hi, guest`.
+As Ternary Operator evaluates on the basis of either `true` or `Truthy Value` as expression/ condition..
+So `temp` is currently `38` to which `38 > 35` i.e., `true`
+thus JS Engine goes for last `?` part and executes instantly showing `"Today's weather is Hot"`.
