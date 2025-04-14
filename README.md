@@ -1733,3 +1733,160 @@ Output: `Hi, guest`.
 As Ternary Operator evaluates on the basis of either `true` or `Truthy Value` as expression/ condition..
 So `temp` is currently `38` to which `38 > 35` i.e., `true`
 thus JS Engine goes for last `?` part and executes instantly showing `"Today's weather is Hot"`.
+
+## Day 16:📗 Objects in JavaScript
+
+### Question 1:
+
+```javascript
+const person1 = {
+  name: "Elijah",
+  age: 24,
+};
+
+const person2 = person1;
+
+person2.age = 30;
+
+console.log(person1.age);
+```
+
+**Answer & Justification:**
+Output: `30`.
+Since `person1` is an `object` and JS Engine stores it by reference not values..
+Thus, `person2` is given direct `@address` of `person1`.
+Which means JS Engine uses same `@address` of `person1` to allocate `person2` where-in any change in data done by any object reflects permanently -> `24` -> `30`.
+
+### Question 2:
+
+```javascript
+const person1 = {
+  name: "Elijah",
+  city: "New Orleans",
+};
+
+const person2 = {
+  name: person1.name,
+  city: person1.city,
+};
+
+person2.city = "Mystic Falls";
+console.log(person1.city);
+```
+
+**Answer & Justification:**
+Output: `"New Orleans"`.
+Since `person2` even if it takes same data as of `person1`.
+It's created using `{}` this makes JS Engine to allocate separate `@address` this makes both `person1` and `person2` different.
+Thus, even if `person2` holds same data as of `person1` but, they're separated by `@address` each data...
+Hence a change in `person2's data` wont affect `person1`
+
+### Question 3:
+
+```javascript
+const original = {
+  name: "Elijah",
+  friends: ["Klaus", "Rebekah"],
+};
+
+const clone = original;
+clone.friends.push("Hayley");
+
+console.log(original.friends.length);
+```
+
+**Answer & Justification:**
+Output: `3`.
+Here `clone` is given direct reference by `@address` of `original` as JS Engine doesn't allocate different `@address` due to `=` used there...
+As any update in `clone` directly affects data present in the `@address` which is also shared by the same `original`
+Thus now `original.friends` would be `["Klaus", "Rebekah", "Hayley"]` as well.
+
+### Question 4:
+
+```javascript
+const user = {
+  name: "Freya",
+  location: {
+    city: "Mystic Falls",
+    realm: "Earth",
+  },
+};
+
+const user2 = {
+  name: user.name,
+  location: user.location,
+};
+
+user2.location.city = "New Orleans";
+console.log(user.location.city);
+```
+
+**Answer & Justification:**
+Output: `"New Orleans"`.
+Here indeed, `user2` is created with the new `@address` but, inside `location` is given the `reference` not the value\*
+Because, JS Engine gives `@address` of the nested-object of `user` instead of giving separate `@address`.
+Thus if `user2.location.city = "New Orleans";` changes reflects changes in `user.location.city` as-well due to `@address sharing`.
+
+### Question 5:
+
+```javascript
+const hero1 = { name: "Elijah" };
+const hero2 = { name: "Elijah" };
+console.log(hero1 === hero2);
+```
+
+**Answer & Justification:**
+Output: `false`.
+Since, `hero1` and `hero2` does have same values But, JS Engine gives them each a unique `@address` due to `{}` used there..
+When comparing it returns `false` as JS Engine checks striclty via `reference` not as values.
+
+### Question 6:
+
+```javascript
+const person1 = {
+  name: "Alice",
+  age: 30,
+  greet() {
+    console.log(`Hello, I'm ${this.name}`);
+  },
+};
+
+const person2 = person1;
+
+person2.age = 35;
+person2.name = "Bob";
+
+person1.greet();
+```
+
+**Answer & Justification:**
+Output: `Hello, I'm Bob`.
+As `person2` is given the straight `reference` of `person1` where JS Engine doesn't allocate it a new address instead it gives same `@address` as of `person1`.
+Thus, a any change in `person2` reflects to data stored in `@address` thus, leaving same data with both objects.
+
+### Question 7:
+
+```javascript
+const person1 = {
+  name: "John",
+  age: 30,
+  greet: function () {
+    console.log(`Hello, I'm ${this.name}`);
+  },
+};
+
+const person2 = {
+  name: person1.name,
+  age: person1.age,
+  greet: person1.greet,
+};
+
+person2.name = "William";
+console.log(person1.greet());
+```
+
+**Answer & Justification:**
+Output: `Hello, I'm John`.
+As `person2` is newly create with `{}` of same data `person1` where JS Engine allocates it a new address.
+Thus, a any change in `person2` reflects it's own data stored separate location at `@address` whereas it doesn't affect
+`person1` anyway..
